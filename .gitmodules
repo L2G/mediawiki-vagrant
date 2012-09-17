@@ -19,3 +19,6 @@
 [submodule "cookbooks/postgresql"]
 	path = cookbooks/postgresql
 	url = https://github.com/opscode-cookbooks/postgresql
+[submodule "mediawiki/core"]
+	path = mediawiki/core
+	url = https://gerrit.wikimedia.org/r/p/mediawiki/core.git
