@@ -55,6 +55,10 @@ Vagrant::Config.run do |config|
   config.vm.provision :chef_solo do |chef|
     chef.cookbooks_path = "cookbooks"
     chef.add_recipe("mediawiki")
+
+    # You can choose a specific version of MediaWiki as shown below.
+    # This is optional and will default to a recent release.
+    #chef.json = { :mediawiki => { :version => "1.20.0" }}
   end
 
   # Enable provisioning with chef server, specifying the chef server URL,

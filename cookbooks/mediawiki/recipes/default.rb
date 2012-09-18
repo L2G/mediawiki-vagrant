@@ -9,7 +9,7 @@ include_recipe "openssl"
 include_recipe "postgresql::server"
 
 application "mediawiki" do
-    path "/var/www/mediawiki"
+    path       "/var/www/mediawiki"
     repository "/vagrant/.git/modules/mediawiki/core"
-    revision "1.19.2"
+    revision   node["mediawiki"]["version"]
 end
