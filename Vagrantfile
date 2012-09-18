@@ -54,20 +54,7 @@ Vagrant::Config.run do |config|
 
   config.vm.provision :chef_solo do |chef|
     chef.cookbooks_path = "cookbooks"
-
-    # Configuration data that possibly could be refactored as "roles"
-    chef.json = {
-        :apache => {
-            :default_modules => %w(ssl rewrite php5)
-        }
-    }
-
-    # Ordering of these recipes is probably important
-    chef.add_recipe("apt")
-    chef.add_recipe("openssl")
-    chef.add_recipe("postgresql::server")
-    chef.add_recipe("php")
-    chef.add_recipe("apache2")
+    chef.add_recipe("mediawiki")
   end
 
   # Enable provisioning with chef server, specifying the chef server URL,
